@@ -125,8 +125,6 @@ export function Tela4() {
         setRadioButtons2(radioButtonsArray);
     }
 
-    const teste = ['teste'];
-
     return (
         <Container>
             <Text>Tela 4</Text>
