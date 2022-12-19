@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { Button } from './../../components/Button/index';
 import { useNavigation } from '@react-navigation/native';
 import { Input } from '../../components/Input';
-
 import RadioGroup, {RadioButtonProps} from 'react-native-radio-buttons-group';
+
+import { RadioGroupOption } from '../../components/RadioGroupOption';
 
 const radioButtonsData: RadioButtonProps[] = [
     {
@@ -48,7 +49,6 @@ const radioButtonsData2: RadioButtonProps[] = [
         value: 'V'
     }
 ]
-
 
 export function Tela4() {
     const navigation = useNavigation();
@@ -125,6 +125,8 @@ export function Tela4() {
         setRadioButtons2(radioButtonsArray);
     }
 
+    const teste = ['teste'];
+
     return (
         <Container>
             <Text>Tela 4</Text>
@@ -139,6 +141,8 @@ export function Tela4() {
 
             <Button title='Ver Informações' onPress={msg}/>
             <Button title='Home' onPress={rotaHome}/>
+
+            {/* <RadioGroupOption opcoes={radioButtonsData}/> */}
         </Container>
     );
 }
