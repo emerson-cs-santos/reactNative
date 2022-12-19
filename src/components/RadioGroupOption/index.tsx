@@ -6,9 +6,15 @@ import RadioGroup, {RadioButtonProps} from 'react-native-radio-buttons-group';
 //     opcoes: RadioButtonProps
 // }
 
-export const RadioGroupOption = (Props: RadioButtonProps[]) => {
+interface Props {
+    opcoes?: []
+    ativo?: Boolean
+    data: (id, label)=> void
+}
 
-    console.log(Props);
+export const RadioGroupOption = (Props: Props ) => {
+
+    const { opcoes,ativo ,data} = Props;
 
     const radioButtonsData: RadioButtonProps[] = [
         {
@@ -31,13 +37,22 @@ export const RadioGroupOption = (Props: RadioButtonProps[]) => {
         }
     ];
 
-    const [radioButton, setRadioButtons] = useState<RadioButtonProps[]>(radioButtonsData);
+    const [radioButton, setRadioButtons] = useState<RadioButtonProps[]>([...radioButtonsData]);
 
     function onPressRadioButton(radioButtonsArray: RadioButtonProps[]) {
         setRadioButtons(radioButtonsArray);
     }
 
     return (
-        <RadioGroup radioButtons={radioButton} onPress={onPressRadioButton}/>
+        <RadioGroup  radioButtons={radioButton} onPress={(item)=>{
+
+            item.forEach(element =>
+                {
+                    if ( element.selected )
+                    {
+                        data(element.id, element.label);
+                    }
+                });
+        }}/>
     );
   };
