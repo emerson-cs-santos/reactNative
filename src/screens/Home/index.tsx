@@ -18,12 +18,17 @@ export function Home() {
         navigation.navigate("tela3");
     }
 
+    const rotaTela4 = () => {
+        navigation.navigate("tela4");
+    }
+
     return (
     <Container>
         <Text>Home</Text>
         <Button title='Tela 1' onPress={rotaTela1}/>
         <Button title='Tela 2' onPress={rotaTela2}/>
         <Button title='Tela 3' onPress={rotaTela3}/>
+        <Button title='Tela 4' onPress={rotaTela4}/>
     </Container>
     );
 }
