@@ -62,7 +62,7 @@ export function Tela4() {
 
     // Utilizar useEffect para monitorar a troca de estado de uma ou mais vars, fazer isso ao precisar executar códigos fora de funções
     useEffect(() => {
-        console.log(idSelecionado);
+     //   console.log(idSelecionado);
     }, [idSelecionado, labelSelecionado])
 
     const [nome, setNome] = useState('');
