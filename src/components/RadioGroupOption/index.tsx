@@ -1,11 +1,6 @@
 import { useState, forwardRef } from 'react';
 import RadioGroup, {RadioButtonProps} from 'react-native-radio-buttons-group';
 
-// interface Props
-// {
-//     opcoes: RadioButtonProps
-// }
-
 interface Props {
     opcoes?: []
     ativo?: Boolean

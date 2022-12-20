@@ -1,10 +1,11 @@
 import { Container } from './styles';
 import { Text, Alert, StyleSheet, View } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from './../../components/Button/index';
 import { useNavigation } from '@react-navigation/native';
 import { Input } from '../../components/Input';
 import Checkbox from 'expo-checkbox';
+import { CheckBoxYoutube } from '../../components/CheckBoxYoutube';
 
 import { useTheme } from "styled-components"
 
@@ -45,6 +46,12 @@ export function Tela5() {
     const [isCheckedTwitter, setCheckedTwitter] = useState(false);
     const [isCheckedKoo, setCheckedKoo] = useState(false);
     const [isCheckedFacebook, setCheckedFacebook] = useState(false);
+    const [isCheckedYoutube, setCheckedYoutube] = useState(false);
+
+    // Utilizar useEffect para monitorar a troca de estado de uma ou mais vars, fazer isso ao precisar executar códigos fora de funções
+    useEffect(() => {
+        console.log(`Youtube marcação: ${isCheckedYoutube}`)
+       }, [isCheckedYoutube])
 
     const { COLORS } = useTheme();
 
@@ -59,19 +66,23 @@ export function Tela5() {
 
             <View style={styles.container}>
                 <View style={styles.section}>
-                    <Checkbox style={styles.checkbox} value={isCheckedTwitter} onValueChange={setCheckedTwitter}/>
+                    <Checkbox style={styles.checkbox} value={isCheckedTwitter} onValueChange={setCheckedTwitter} color={isCheckedTwitter ? COLORS.BLUE2 : undefined}/>
                     <Text>Twitter</Text>
                 </View>
 
                 <View style={styles.section}>
-                    <Checkbox style={styles.checkbox} value={isCheckedKoo} onValueChange={setCheckedKoo} color={isCheckedKoo ? COLORS.BLUE2 : undefined}/>
+                    <Checkbox style={styles.checkbox} value={isCheckedKoo} onValueChange={setCheckedKoo} color={isCheckedKoo ? COLORS.YELLOW : undefined}/>
                     <Text>Koo</Text>
                 </View>
 
                 <View style={styles.section}>
                     <Checkbox style={styles.checkbox} disabled value={isCheckedFacebook} onValueChange={setCheckedFacebook} />
-                    <Text style={styles.paragraph}>FaceBook</Text>
+                    <Text style={styles.paragraph}>FaceBook (Desabilitado)</Text>
                 </View>
+
+                <CheckBoxYoutube data={(retorno) => {
+                 setCheckedYoutube(retorno)
+            }}/>
             </View>
 
             <Button title='Enviar' onPress={msg}/>
