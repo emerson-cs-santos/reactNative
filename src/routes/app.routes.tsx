@@ -9,6 +9,8 @@ import { Tela5 } from '../screens/Tela5';
 import { Tela6 } from '../screens/Tela6';
 import { Tela7 } from '../screens/Tela7';
 import { Tela8 } from '../screens/Tela8';
+import { Tela9 } from '../screens/Tela9';
+import { Tela10 } from '../screens/Tela10';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
@@ -33,6 +35,8 @@ export function AppRoutes() {
             <Screen name='tela6' component={Tela6}/>
             <Screen name='tela7' component={Tela7}/>
             <Screen name='tela8' component={Tela8}/>
+            <Screen name='tela9' component={Tela9}/>
+            <Screen name='tela10' component={Tela10}/>
         </Navigator>
     )
 

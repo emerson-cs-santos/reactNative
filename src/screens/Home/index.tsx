@@ -1,6 +1,5 @@
-import { Container } from './styles';
-import { Text } from 'react-native';
-import { Button } from '../../components/Button/index';
+import { Container, ViewButton } from './styles';
+import { Button, Text } from "@react-native-material/core";
 import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
@@ -38,18 +37,49 @@ export function Home() {
         navigation.navigate("tela8");
     }
 
+    const rotaTela9 = () => {
+        navigation.navigate("tela9");
+    }
 
     return (
     <Container>
-        <Text>Home</Text>
-        <Button title='Tela 1-Route Params' onPress={rotaTela1}/>
-        <Button title='Tela 2-Input number' onPress={rotaTela2}/>
-        <Button title='Tela 3-Material UI' onPress={rotaTela3}/>
-        <Button title='Tela 4-RadioGroup' onPress={rotaTela4}/>
-        <Button title='Tela 5-CheckBox' onPress={rotaTela5}/>
-        <Button title='Tela 6-SelectList' onPress={rotaTela6}/>
-        <Button title='Tela 7-Date/Time Picker' onPress={rotaTela7}/>
-        <Button title='Tela 8-OpenUrl' onPress={rotaTela8}/>
+        <Text variant="h4">Home</Text>
+
+        <ViewButton>
+            <Button title='Tela 1-Route Params' onPress={rotaTela1}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 2-Input number' onPress={rotaTela2}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 3-Material UI' onPress={rotaTela3}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 4-RadioGroup' onPress={rotaTela4}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 5-CheckBox' onPress={rotaTela5}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 6-SelectList' onPress={rotaTela6}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 7-Date/Time Picker' onPress={rotaTela7}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 8-OpenUrl' onPress={rotaTela8}/>
+        </ViewButton>
+
+        <ViewButton>
+            <Button title='Tela 9-Consultar' onPress={rotaTela9}/>
+        </ViewButton>
     </Container>
     );
 }
