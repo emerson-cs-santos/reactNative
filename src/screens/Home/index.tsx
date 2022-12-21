@@ -42,14 +42,14 @@ export function Home() {
     return (
     <Container>
         <Text>Home</Text>
-        <Button title='Tela 1' onPress={rotaTela1}/>
-        <Button title='Tela 2' onPress={rotaTela2}/>
-        <Button title='Tela 3' onPress={rotaTela3}/>
-        <Button title='Tela 4' onPress={rotaTela4}/>
-        <Button title='Tela 5' onPress={rotaTela5}/>
-        <Button title='Tela 6' onPress={rotaTela6}/>
-        <Button title='Tela 7' onPress={rotaTela7}/>
-        <Button title='Tela 8' onPress={rotaTela8}/>
+        <Button title='Tela 1-Route Params' onPress={rotaTela1}/>
+        <Button title='Tela 2-Input number' onPress={rotaTela2}/>
+        <Button title='Tela 3-Material UI' onPress={rotaTela3}/>
+        <Button title='Tela 4-RadioGroup' onPress={rotaTela4}/>
+        <Button title='Tela 5-CheckBox' onPress={rotaTela5}/>
+        <Button title='Tela 6-SelectList' onPress={rotaTela6}/>
+        <Button title='Tela 7-Date/Time Picker' onPress={rotaTela7}/>
+        <Button title='Tela 8-OpenUrl' onPress={rotaTela8}/>
     </Container>
     );
 }
