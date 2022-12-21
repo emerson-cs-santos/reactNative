@@ -34,6 +34,11 @@ export function Home() {
         navigation.navigate("tela7");
     }
 
+    const rotaTela8 = () => {
+        navigation.navigate("tela8");
+    }
+
+
     return (
     <Container>
         <Text>Home</Text>
@@ -44,6 +49,7 @@ export function Home() {
         <Button title='Tela 5' onPress={rotaTela5}/>
         <Button title='Tela 6' onPress={rotaTela6}/>
         <Button title='Tela 7' onPress={rotaTela7}/>
+        <Button title='Tela 8' onPress={rotaTela8}/>
     </Container>
     );
 }
