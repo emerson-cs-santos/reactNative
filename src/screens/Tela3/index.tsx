@@ -3,7 +3,7 @@ import { Text, Alert, View } from 'react-native';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Input } from '../../components/Input';
-import { Button } from "@react-native-material/core";
+import { Button, TextInput } from "@react-native-material/core";
 
 export function Tela3() {
     const navigation = useNavigation();
@@ -28,8 +28,8 @@ export function Tela3() {
     return (
         <Container>
             <Text>Tela 3</Text>
-            <Input onChangeText={setNome} keyboardType="default" placeholder='Nome'/>
-            <Input onChangeText={setSobreNome} keyboardType="default" placeholder='SobreNome'/>
+            <TextInput onChangeText={setNome} keyboardType="default" placeholder='Nome'/>
+            <TextInput onChangeText={setSobreNome} keyboardType="default" placeholder='SobreNome'/>
             <Button title='Olá' onPress={msg}/>
 
             <ViewButton>
